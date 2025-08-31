@@ -9,6 +9,7 @@ All images are for demonstration purposes only. I only claim ownership of images
 
 - **Brain illustration:** macrovector from Freepik  
 - **Fonts and icons:** Font Awesome  
-- **Intro animation:** Canva  
+- **Intro animation:** Canva
+- - **My picture** Kastekust
 
 > Note: I tried to credit the creators of the game characters used, but I could not locate them after extensive searching. If you know them, please contact me!
