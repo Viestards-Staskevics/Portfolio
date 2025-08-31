@@ -1,13 +1,14 @@
 # Portfolio
+
 This portfolio webpage was one of my earlier projects. Since then, I’ve improved significantly in file management and code readability.
 
+**Image notice:**  
 All images are for demonstration purposes only. I only claim ownership of images featuring myself.
 
-# Credit
-macrovector from Freepik (the brain image)
+# Credits
 
-(also if you happen to know the people who made the amazing characters for the game I would be very greatful If you could reach out to me. I want to credit them but I couldn't find them for multiple days and unlitmatly gave up... It felt as if they were just erased from the web)
+- **Brain illustration:** macrovector from Freepik  
+- **Fonts and icons:** Font Awesome  
+- **Intro animation:** Canva  
 
-Fontawesome for the fonts
-
-Canva for the intro animation
+> Note: I tried to credit the creators of the game characters used, but I could not locate them after extensive searching. If you know them, please contact me!
