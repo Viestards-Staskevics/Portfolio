@@ -525,44 +525,44 @@ function checkVisibility() {
     if (visible && !isPlaying) {
         startAnimation();
     } else if (!visible && isPlaying) {
-        stopAnimation();
-    }
-}
+//         stopAnimation();
+//     }
+// }
 
-function startAnimation() {
-    if (!isPlaying) {
-        isPlaying = true;
-        lastFrame = -1;
-        requestAnimationFrame(updateVideo);
-    }
-}
+// function startAnimation() {
+//     if (!isPlaying) {
+//         isPlaying = true;
+//         lastFrame = -1;
+//         requestAnimationFrame(updateVideo);
+//     }
+// }
 
-function stopAnimation() {
-    isPlaying = false;
-}
+// function stopAnimation() {
+//     isPlaying = false;
+// }
 
-let scrollTimeout;
-window.addEventListener('scroll', () => {
-    clearTimeout(scrollTimeout);
-    scrollTimeout = setTimeout(checkVisibility, 50);
-});
+// let scrollTimeout;
+// window.addEventListener('scroll', () => {
+//     clearTimeout(scrollTimeout);
+//     scrollTimeout = setTimeout(checkVisibility, 50);
+// });
 
-let resizeTimer;
-window.addEventListener('resize', () => {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(() => {
-        if (container) {
-            maxScroll = container.offsetHeight - window.innerHeight;
-            checkVisibility();
-        }
-    }, 200);
-});
+// let resizeTimer;
+// window.addEventListener('resize', () => {
+//     clearTimeout(resizeTimer);
+//     resizeTimer = setTimeout(() => {
+//         if (container) {
+//             maxScroll = container.offsetHeight - window.innerHeight;
+//             checkVisibility();
+//         }
+//     }, 200);
+// });
 
-video.addEventListener('error', (e) => {
-    console.error('Video error:', video.error);
-});
+// video.addEventListener('error', (e) => {
+//     console.error('Video error:', video.error);
+// });
 
-window.addEventListener('load', checkVisibility);
+// window.addEventListener('load', checkVisibility);
 
 let isEventActive = false; 
 
@@ -2405,3 +2405,4 @@ function gameStart(ans) {
     }
 
 }
+
