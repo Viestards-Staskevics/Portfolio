@@ -432,16 +432,16 @@ function handleClick(element) {
   element.onclick = null;
 }
 
-const VIDEO = {
-    fps: 30.17,
-    duration: 6,
-    get totalFrames() {
-        return Math.ceil(this.fps * this.duration);
-    },
-    get frameTime() {
-        return 1 / this.fps;
-    }
-};
+// const VIDEO = {
+//     fps: 30.17,
+//     duration: 6,
+//     get totalFrames() {
+//         return Math.ceil(this.fps * this.duration);
+//     },
+//     get frameTime() {
+//         return 1 / this.fps;
+//     }
+// };
 
 // const video = document.querySelector('#videoScroll video');
 // let maxScroll = 0;
@@ -2405,5 +2405,6 @@ function gameStart(ans) {
     }
 
 }
+
 
 
