@@ -443,88 +443,88 @@ const VIDEO = {
     }
 };
 
-const video = document.querySelector('#videoScroll video');
-let maxScroll = 0;
-let isPlaying = false;
-let lastFrame = -1;
-let container = null;
+// const video = document.querySelector('#videoScroll video');
+// let maxScroll = 0;
+// let isPlaying = false;
+// let lastFrame = -1;
+// let container = null;
 
-let animating = false;
-let animationStart = null;
-let animationFrom = 0;
-let animationTo = 0;
-let animationDuration = 1200; 
+// let animating = false;
+// let animationStart = null;
+// let animationFrom = 0;
+// let animationTo = 0;
+// let animationDuration = 1200; 
 
-video.preload = 'auto';
-video.addEventListener('loadeddata', async () => {
-  VIDEO.duration = video.duration;
+// video.preload = 'auto';
+// video.addEventListener('loadeddata', async () => {
+//   VIDEO.duration = video.duration;
 
-  while(video.readyState < HTMLMediaElement.HAVE_FUTURE_DATA) {
-      await new Promise(r => setTimeout(r, 100));
-  }
+//   while(video.readyState < HTMLMediaElement.HAVE_FUTURE_DATA) {
+//       await new Promise(r => setTimeout(r, 100));
+//   }
 
-  initScrollControl();
-});
+//   initScrollControl();
+// });
 
-function initScrollControl() {
-    container = document.getElementById("videoScroll");
-    maxScroll = container.offsetHeight - window.innerHeight;
-    checkVisibility();
-}
+// function initScrollControl() {
+//     container = document.getElementById("videoScroll");
+//     maxScroll = container.offsetHeight - window.innerHeight;
+//     checkVisibility();
+// }
 
-function updateVideo(timestamp) {
-  if (!isPlaying) return;
+// function updateVideo(timestamp) {
+//   if (!isPlaying) return;
 
-  const scrollTop = window.scrollY - container.offsetTop;
-  const progress = Math.min(1, Math.max(0, scrollTop / maxScroll));
-  const targetFrame = Math.round(progress * (VIDEO.totalFrames - 1));
+//   const scrollTop = window.scrollY - container.offsetTop;
+//   const progress = Math.min(1, Math.max(0, scrollTop / maxScroll));
+//   const targetFrame = Math.round(progress * (VIDEO.totalFrames - 1));
 
-  if (targetFrame !== animationTo) {
-    animationFrom = lastFrame < 0 ? targetFrame : lastFrame;
-    animationTo = targetFrame;
+//   if (targetFrame !== animationTo) {
+//     animationFrom = lastFrame < 0 ? targetFrame : lastFrame;
+//     animationTo = targetFrame;
 
-    const frameDiff = Math.abs(animationTo - animationFrom);
-    const BASE_DURATION = 120;  
-    const MIN_DURATION = 80;    
-    const MAX_DURATION = 600;   
-    animationDuration = Math.min(
-      MAX_DURATION,
-      Math.max(MIN_DURATION, (frameDiff / 100) * BASE_DURATION)
-    );
+//     const frameDiff = Math.abs(animationTo - animationFrom);
+//     const BASE_DURATION = 120;  
+//     const MIN_DURATION = 80;    
+//     const MAX_DURATION = 600;   
+//     animationDuration = Math.min(
+//       MAX_DURATION,
+//       Math.max(MIN_DURATION, (frameDiff / 100) * BASE_DURATION)
+//     );
 
-    animationStart = timestamp;
-    animating = true;
-  }
+//     animationStart = timestamp;
+//     animating = true;
+//   }
 
-  if (animating) {
-    const elapsed = timestamp - animationStart;
-    const t = Math.min(1, elapsed / animationDuration);
-    let currentFrame = animationFrom + (animationTo - animationFrom) * t;
+//   if (animating) {
+//     const elapsed = timestamp - animationStart;
+//     const t = Math.min(1, elapsed / animationDuration);
+//     let currentFrame = animationFrom + (animationTo - animationFrom) * t;
 
-    const frameDiff = Math.abs(animationTo - animationFrom);
-    const stepSize = frameDiff > 400 ? Math.ceil(frameDiff / 200) : 1; 
-    currentFrame = Math.round(currentFrame / stepSize) * stepSize;
+//     const frameDiff = Math.abs(animationTo - animationFrom);
+//     const stepSize = frameDiff > 400 ? Math.ceil(frameDiff / 200) : 1; 
+//     currentFrame = Math.round(currentFrame / stepSize) * stepSize;
 
-    if (currentFrame !== lastFrame) {
-      lastFrame = currentFrame;
-      const targetTime = Math.min(video.duration, lastFrame * VIDEO.frameTime);
-      video.currentTime = targetTime;
-    }
+//     if (currentFrame !== lastFrame) {
+//       lastFrame = currentFrame;
+//       const targetTime = Math.min(video.duration, lastFrame * VIDEO.frameTime);
+//       video.currentTime = targetTime;
+//     }
 
-    if (t >= 1) {
-      animating = false;
-    }
-  }
+//     if (t >= 1) {
+//       animating = false;
+//     }
+//   }
 
-  requestAnimationFrame(updateVideo);
-}
+//   requestAnimationFrame(updateVideo);
+// }
 
-function checkVisibility() {
-    if (!container) return;
-    const visible = isVisible(container);
-    if (visible && !isPlaying) {
-        startAnimation();
-    } else if (!visible && isPlaying) {
+// function checkVisibility() {
+//     if (!container) return;
+//     const visible = isVisible(container);
+//     if (visible && !isPlaying) {
+//         startAnimation();
+//     } else if (!visible && isPlaying) {
 //         stopAnimation();
 //     }
 // }
@@ -2405,4 +2405,5 @@ function gameStart(ans) {
     }
 
 }
+
 
