@@ -8,6 +8,7 @@ All images are for demonstration purposes only. I only claim ownership of images
 # Credits
 
 - **Brain illustration:** macrovector from Freepik  
+- **Chess illustration:** Freepik
 - **Fonts and icons:** Font Awesome  
 - **Intro animation:** Canva
 - **My picture** Kastekust
