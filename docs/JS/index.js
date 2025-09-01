@@ -1,24 +1,24 @@
 document.body.scrollTop = 0; 
 document.documentElement.scrollTop = 0; 
 
-const DOMvideo = "../IMG/mainPage/animation.mp4";
+// const DOMvideo = "../IMG/mainPage/animation.mp4";
 
-function preloadVideo(src) {
-  return new Promise((res, rej) => {
-    const v = document.createElement("video");
-    v.preload = "auto";
-    v.src = src;
-    v.addEventListener("loadeddata", res, { once: true });
-    v.addEventListener("error", rej, { once: true });
-    v.load();
-  });
-}
+// function preloadVideo(src) {
+//   return new Promise((res, rej) => {
+//     const v = document.createElement("video");
+//     v.preload = "auto";
+//     v.src = src;
+//     v.addEventListener("loadeddata", res, { once: true });
+//     v.addEventListener("error", rej, { once: true });
+//     v.load();
+//   });
+// }
 
-Promise.all([
-  preloadVideo(DOMvideo)
-]).then(() => {
-  document.querySelector("#webContainer").classList.add("endAnimation");
-});
+// Promise.all([
+//   preloadVideo(DOMvideo)
+// ]).then(() => {
+//   document.querySelector("#webContainer").classList.add("endAnimation");
+// });
 
   function typewriter(element, typewriterSpeed = 50) {
     const text = element.getAttribute("data-type");
@@ -2403,4 +2403,5 @@ function gameStart(ans) {
        gameIco.onclick = () => handleClick(gameIco);
 
     }
+
 }
