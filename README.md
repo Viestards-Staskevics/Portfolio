@@ -5,6 +5,11 @@ This portfolio webpage was one of my earlier projects. Since then, I’ve improv
 **Image notice:**  
 All images are for demonstration purposes only. I only claim ownership of images featuring myself.
 
+# Instructions
+1. Download and unzip the file.  
+2. Open `HTML/index.html` in your browser.  
+
+   
 # Credits
 
 - **Brain illustration:** macrovector from Freepik  
@@ -12,5 +17,6 @@ All images are for demonstration purposes only. I only claim ownership of images
 - **Fonts and icons:** Font Awesome  
 - **Intro animation:** Canva
 - **My picture** Kastekust
+- **Video** Ceos_Stock from pixabay
 
 > Note: I tried to credit the creators of the game characters used, but I could not locate them after extensive searching. If you know them, please contact me!
